@@ -33,18 +33,27 @@ namespace C_Homework4._4
             cpassword = txtCPassword.Text;
 
             // Process
-            if (username == "admin" && password == "12345" && cpassword == "12345")
+            if (username == "admin")
             {
-                // both password and confirm password match
-                MessageBox.Show("Log in successfully!", "YYAYYYY");
-            }
-            else if (password != cpassword)
-            {
-                MessageBox.Show("Password and Confirm Password do not match", "Error");
+                if (password == "12345")
+                {
+                    if (cpassword == password)
+                    {
+                        MessageBox.Show("Login Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Confirm Password does not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Invalid username or password", "Error");
+                MessageBox.Show("Username not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
